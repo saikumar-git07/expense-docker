@@ -9,6 +9,7 @@ systemctl enable --now docker
 usermod -aG docker ec2-user
 echo -e "$R Logout and Login again $N"
 lsblk
+growpart /dev/nvme0n1 4
 lvextend -l +50%FREE /dev/RootVG/rootVol
 lvextend -l +50%FREE /dev/RootVG/varVol
 xfs_growfs /
