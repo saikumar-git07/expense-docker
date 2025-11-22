@@ -4,14 +4,15 @@ networks:
     name: expense
 volumes:
   mysql:
+   external: true
 services:
   mysql:
     image: mysql:v1.0.0
     container_name: mysql
     volumes:
-      - source: mysql
-        target: /var/lib/mysql
-        type: volumes
+    - source: mysql
+      target: /var/lib/mysql
+      type: volumes
   backend:
     image: backend:v1.0.0
     container_name: backend
