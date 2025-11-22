@@ -12,7 +12,7 @@ services:
     volumes:
     - source: mysql
       target: /var/lib/mysql
-      type: volumes
+      type: volume
   backend:
     image: backend:v1.0.0
     container_name: backend
